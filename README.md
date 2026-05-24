@@ -33,7 +33,7 @@ The app is split into 2 layers:
 - **features/ai_chat** contains :
   - **Data** — LLM clients, Drift persistence, Models
   - **Presentation** — Riverpod notifiers, UI
-
+**NOTE** No domain layer was used to keep the code simple without over-engenierring it. The data layer is connected directly with the providers.
 The core abstraction is `LlmClient`, an interface that both `OpenAiClient` and `GemmaClient` implement. The rest of the app depends only on this interface — swapping providers means writing a new implementation and changing one line in the provider.
 Note: Currently the openAi code is commented and openrouter is used instead.
 
